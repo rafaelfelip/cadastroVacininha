@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <locale.h>
+#include <locale.h>   
 
 typedef struct {
     char login[8];
     char senha[8];
 } pessoa; pessoa p[100];
-// variaveis
-int numero;
 
+// variaveis globais
+int numero;
 
 
 // PRINCIPAL
@@ -24,11 +24,13 @@ int main() {
 // Função login
 void login() {
 
+    char login[10];
+    char senha[8];
+
     printf("\t\t\t*************************************\n\n");
     printf("\t\t\t*****SEJA BEM VINDO AO VACININHA*****\n\n");
     printf("\t\t\t*************************************\n\n");
-    char login[10];
-    char senha[8];
+   
 
     strcpy(p[0].login, "admin");
     strcpy(p[0].senha, "admin");
@@ -39,7 +41,7 @@ void login() {
 
     printf("\tSenha: ");
     scanf("%s", senha);
-    
+
 
     if (strcmp(login,p[0] .login) == 0 && strcmp(senha,p[0] .senha) == 0)
 
