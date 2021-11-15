@@ -11,12 +11,19 @@ typedef struct {
 // variaveis globais
 int numero;
 
+char nome[50];
+char cpf[50];
+char idade[50];
+char sexo[50];
+char endereco[50];
 
-// PRINCIPAL
+
+/******************* função principal (main) *********************/
 int main() {
 
     login();
-    menu();    
+    menu();
+    cadastro();    
 
     return 0;
 }
@@ -28,7 +35,7 @@ void login() {
     char senha[8];
 
     printf("\t\t\t*************************************\n\n");
-    printf("\t\t\t*****SEJA BEM VINDO AO VACININHA*****\n\n");
+    printf("\t\t\t*******BEM VINDO AO VACININHA********\n\n");
     printf("\t\t\t*************************************\n\n");
    
 
@@ -72,10 +79,38 @@ void menu(){
 
         break;
     }
-    
+
+    system("clear");    
 }
 
-// Consulta
+// função cadastro
+void cadastro() {
 
 
-// Cadastro
+    printf("\t\t\t*****CADASTRO DE PACIENTE*****\n\n");
+    
+    printf("\nNome: ");
+    scanf("%d", &nome);
+    gets(nome);
+
+    printf("\nCPF: ");
+    scanf("%d", &cpf);
+    gets(cpf);
+
+    printf("\nIdade: ");
+    scanf("%d", &idade);
+    gets(idade);
+
+    printf("\nSexo: ");
+    scanf("%d", &sexo);
+    gets(sexo);
+
+    printf("\nEndereço: ");
+    scanf("%d", &endereco);
+    gets(endereco);
+}
+
+// Função consulta
+
+
+// Função agendamento
