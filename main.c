@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <locale.h>   
+#include <locale.h> 
 
 typedef struct {
     char login[8];
@@ -16,6 +16,8 @@ char cpf[50];
 char idade[50];
 char sexo[50];
 char endereco[50];
+char cidade[50];
+char estado[50];
 
 
 /******************* função principal (main) *********************/
@@ -61,7 +63,7 @@ void login() {
     system("clear");
 }
 
-//Função menu
+/******************* função MENU *********************/
 void menu(){
     
     printf("\t\t\tLogin efetuado com exito. \n\n\n");
@@ -71,11 +73,11 @@ void menu(){
     printf("Selecione a opção desejada: \n");
     scanf("%d", &numero);
     switch (numero) {
-        case 1:
+        case 1:consulta();
 
         break;
 
-        case 2:
+        case 2:cadastro();
 
         break;
     }
@@ -83,7 +85,7 @@ void menu(){
     system("clear");    
 }
 
-// função cadastro
+/******************* função CADASTRO *********************/
 void cadastro() {
 
 
@@ -108,9 +110,19 @@ void cadastro() {
     printf("\nEndereço: ");
     scanf("%d", &endereco);
     gets(endereco);
+
+    printf("\nCidade: ");
+    scanf("%d", &cidade);
+    gets(endereco);
+
+    printf("\nEstado: ");
+    scanf("%d", &estado);
+    gets(endereco);
+
+    printf("\n\ncadastro concluido, Paciente nome, portador do CPF: cpf, com idade anos de idade, do sexo: sexo residente am")
 }
 
-// Função consulta
+/******************* função AGENDAMENTO *********************/
 
 
-// Função agendamento
+/******************* função CONSULTA *********************/
