@@ -34,8 +34,6 @@ typedef struct {
 
 // variaveis globais
 int numero;
-int numero1:
-
 
 /******************* função principal (main) *********************/
 int main() {
@@ -163,29 +161,31 @@ void cadastro(){
 
     i++;    
 
-    // int v;
-	// int len_vet = sizeof(paciente); // tamanho do vetor
-	// FILE * arq; 
-    // arq = fopen("dados.bin", "ab");
+/******************* EXPORTAR ARQUIVO BIN COM OS DADOS *********************/
+    int v;
+	int len_vet = sizeof(paciente); // tamanho do vetor
+	FILE * arq; 
+    arq = fopen("dados.bin", "ab");
 
-    // if(arq != NULL){
-	// 	int indice = 0;
-	// 	while(1){
-	// 		paciente p; 
-	// 		size_t r = fread(&p, sizeof(paciente), 1, arq);
+    if(arq != NULL){
+		int indice = 0;
+		while(1){
+			paciente p; 
+			size_t r = fread(&p, sizeof(paciente), 1, arq);
 
-	// 		// se retorno for menor que o count, então sai do loop
-	// 		if(r < 1)
-	// 			break;
-	// 		else
-	// 			aux_pacientes[indice++] = p;
-	// 	}
-	// 	fclose(arq); // fecha o arquivo
-	// 	return indice;
-	// }else{
-	// 	printf("\nErro ao abrir o arquivo para leitura!\n");
-	// 	exit(1); // aborta o programa
+			// se retorno for menor que o count, então sai do loop
+			if(r < 1)
+				break;
+			else
+				aux_pacientes[indice++] = p;
+		}
+		fclose(arq); // fecha o arquivo
+		return indice;
+	}else{
+		printf("\nErro ao abrir o arquivo para leitura!\n");
+		exit(1); // aborta o programa
 	}
+ 
  
     system("clear");   
     printf("\t\t\t CADASTRO DE PACIENTE \n\n"); 
@@ -194,7 +194,7 @@ void cadastro(){
     printf("3 - Sair. \n\n");    
     printf("Selecione a opção desejada: \n");
    
-    scanf("%d", &numero1);   
+    scanf("%d", &numero);   
     switch (numero) {
         case 1:
             menu();
@@ -209,7 +209,7 @@ void cadastro(){
             printf("\n\nBYE :).\n\n");  
             break;
     }
-//}
+}
 
 /******************* função AGENDAMENTO *********************/
 

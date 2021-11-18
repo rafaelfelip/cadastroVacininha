@@ -1,4 +1,3 @@
-// junção dos códigos, que funciona até o momento
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -86,13 +85,13 @@ void menu(){
 
     printf("\t\t\tLogin efetuado com exito. \n\n\n");
     printf("\t\t\tMENU \n\n");
-    printf("1 - Verificar agendamento. \n");
+    printf("1 - Consultar agendamento. \n");
     printf("2 - Cadastrar paciente. \n\n");
     printf("Selecione a opção desejada: \n");
     scanf("%d", &numero);
     switch (numero) {
         case 1:
-
+            consulta();
         break;
 
         case 2:
@@ -162,31 +161,34 @@ void cadastro(){
     printf("Possui outras comodidades? (S ou N): ");
     gets(pac[i].outros);
 
-    i++;
+    //i++;
 
-    // int v;
-	// int len_vet = sizeof(paciente); // tamanho do vetor
-	// FILE * arq;
-    // arq = fopen("dados.bin", "ab");
 
-    // if(arq != NULL){
-	// 	int indice = 0;
-	// 	while(1){
-	// 		paciente p;
-	// 		size_t r = fread(&p, sizeof(paciente), 1, arq);
+    /******************* EXPORTAR ARQUIVO BIN COM OS DADOS *********************/
 
-	// 		// se retorno for menor que o count, então sai do loop
-	// 		if(r < 1)
-	// 			break;
-	// 		else
-	// 			aux_pacientes[indice++] = p;
+    int v;
+	int len_vet = sizeof(paciente); // tamanho do vetor
+	FILE * arq;
+    arq = fopen("dados.bin", "ab");
+
+    if(arq != NULL){
+	 	int indice = 0;
+	 	//while(1){
+	 	//	paciente p;
+	 	//	size_t r = fread(&p, sizeof(paciente), 1, arq);
+
+	 		// se retorno for menor que o count, então sai do loop
+	 	//	if(r < 1)
+	 	//		break;
+	 	//	else
+	 	//		aux_pacientes[indice++] = p;
 	// 	}
-	// 	fclose(arq); // fecha o arquivo
-	// 	return indice;
-	// }else{
-	// 	printf("\nErro ao abrir o arquivo para leitura!\n");
-	// 	exit(1); // aborta o programa
-	// }
+	 	fclose(arq); // fecha o arquivo
+	 	return indice;
+	 }else{
+	 	printf("\nErro ao abrir o arquivo para leitura!\n");
+	 	exit(1); // aborta o programa
+	}
 
     system("clear");
     printf("\t\t\t CADASTRO DE PACIENTE \n\n");
@@ -205,7 +207,7 @@ void cadastro(){
             cadastro();
         break;
 
-        case 3:            
+        case 3:
             system("clear");
             printf("\n\nBYE :).\n\n");
             break;
@@ -213,6 +215,14 @@ void cadastro(){
 }
 
 /******************* função AGENDAMENTO *********************/
-
+void agendamento () {
+    printf("\t\t\tAGENDAMENTO\n\n\n");
+    printf("\nAqui ficará o agendamento!");
+}
 
 /******************* função CONSULTA *********************/
+
+void consulta () {
+    printf("\t\t\tCONSULTA DE PACIENTES AGENDADOS\n\n\n");
+    printf("\nAqui ficará a consulta!");
+}
