@@ -158,10 +158,10 @@ void cadastro(){
     printf("Possui tuberculose? (S ou N): ");
     gets(pac[i].tuberculose);
 
-    printf("Possui outras comodidades? (S ou N): ");
+    printf("Possui outras comorbidades? (S ou N): ");
     gets(pac[i].outros);
 
-    //i++;
+    i++;
 
 
     /******************* EXPORTAR ARQUIVO BIN COM OS DADOS *********************/
